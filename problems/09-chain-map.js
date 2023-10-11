@@ -30,12 +30,16 @@ console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
 function chainMap(val, ...callbacks) {
-  // Your code here 
+  let total = val;
+  for (let i = 0; i < callbacks.length; i++) {
+    let cb = callbacks[i];
+    total = cb(total);
+  }
+  return total;
 }
-
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = chainMap;
-} catch(e) {
+} catch (e) {
   return null;
 }
